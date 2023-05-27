@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elecciones 28Mt</title>
+    <title>Elecciones 28M</title>
     <link rel="stylesheet" href="./CSS/style.css" />
     <script src="script.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
+
 </head>
 <body>
     <!--Titulo de la pagina principal-->
@@ -22,41 +25,120 @@
             <button onclick="guardarTitulo()">Guardar</button>
         </div>
     </div>
-        
-    <!--<button onclick="incrementar()"><img class="botonsumar" src="./img/MAS.svg" alt=""></button>
-    <button onclick="decrementar()"><img class="botonrestar" src="./img/MENOS.png" alt=""></button>
-    -->
-    <table border="1">
-        <tr>
-            <td>Partido</td>
-            <td>Logo PP</td>
-            <td>Logo PSOE</td>
-            <td>Celda 3</td>
-            <td>Celda 4</td>
-        </tr>
-        <tr>
-            <Td>Botones</Td>
-            <td> 
-                <button onclick="incrementarPP()"><img class="botonsumar" src="./img/MAS.svg" alt=""></button>
-                <button onclick="decrementarPP()"><img class="botonrestar" src="./img/MENOS.png" alt=""></button>
-            </td>
-            <td >3</td>
-            <td>Celda 4</td>
-        </tr>
-        <tr>
-            <td>Total:</td>
-            <td><p><span id="contadorPP">0</span></p></td>
-            <td>Celda 4</td>
-        </tr>
-
-    </table>
     
+
+    <div class="contenedor_pagina">
+    
+        <!-- Creado por: Álvaro Escartí :P -->
+        <div class="container">
+            <div class="div1">
+                <img src="./img/pp300.png" alt="Imagen" class="logopp">
+                <h2><p><span id="contadorPP">0</span></p></p></h2>
+                <button onclick="incrementarPP()">+</button>
+                <button onclick="decrementarPP()">-</button>
+            </div>
+            <div class="div2">
+                <img src="./img/logopsoe.png" alt="Imagen" class="logopsoe">
+                <h2> <p><span id="contadorPSOE">0</span> </h2>
+                    <button onclick="incrementarPSOE()">+</button>
+                    <button onclick="decrementarPSOE()">-</button>
+            </div>
+            <div class="div3">
+                <img src="./img/ciudadanos235.png" alt="Imagen" class="logocs">
+                <h2><p><span id="contadorCS">0</span></h2>
+                <button onclick="incrementarCS()">+</button>
+                <button onclick="decrementarCS()">-</button>
+            </div>
+            <div class="div4">
+                <img src="./img/vox300.png" alt="Imagen" class="logovox">
+                <h2><p><span id="contadorVOX">0</span></h2>
+                <button onclick="incrementarVOX()">+</button>
+                <button onclick="decrementarVOX()">-</button>
+            </div>
+        </div>
+    
+        <div class="container2">
+            <div class="div5">
+                <img src="./img/logo-blanc.png" alt="Imagen" class="logocompromis">
+                <h2><p><span id="contadorCOMPROMIS">0</span> </h2>
+                <button onclick="incrementarCOMPROMIS()">+</button>
+                <button onclick="decrementarCOMPROMIS()">-</button>                    
+            </div>
+            <div class="div6">
+                <img src="./img/logo-rvpe.png" alt="Imagen" class="logorvpe">
+                <h2> <p><span id="contadorRVPE">0</span> </h2>
+                <button onclick="incrementarRVPE()">+</button>
+                <button onclick="decrementarRVPE()">-</button>
+                    
+            </div>
+            <div class="div7">
+                <img src="./img/pcpe.png" alt="Imagen" class="logopcpe">
+                <h2><p><span id="contadorPCPE">0</span> </h2>
+                <button onclick="incrementarPCPE()">+</button>
+                <button onclick="decrementarPCPE()">-</button>
+            </div>
+            <div class="div8">
+                <img src="./img/logo-units.png" alt="Imagen" class="logounits">
+                <h2> <p><span id="contadorCOALICIONUNITS">0</span></h2>
+                <button onclick="incrementarCOALICIONUNITS()">+</button>
+                <button onclick="decrementarCOALICIONUNITS()">-</button>
+            </div>
+        </div>
+    
+        <div class="container3">
+            <div class="div9">
+                <img src="./img/logo-alianza.png" alt="Imagen" class="logoalianza">
+                <h2> <p><span id="contadorALIANZACV">0</span></h2>
+                <button onclick="incrementarALIANZACV()">+</button>
+                <button onclick="decrementarALIANZACV()">-</button>
+            </div>
+            <div class="div10">
+                <img src="./img/logo-decidix.png" alt="Imagen" class="logodecidix">
+                <h2><p><span id="contadorDecidix">0</span></h2>
+                <button onclick="incrementarDecidix()">+</button>
+                <button onclick="decrementarDecidix()">-</button>
+            </div>
+            <div class="div11">
+                <img src="./img/logo-unides.png" alt="Imagen" class="logounides">
+                <h2><p><span id="contadorUPEUPV">0</span></h2>
+                <button onclick="incrementarUPEUPV()">+</button>
+                <button onclick="decrementarUPEUPV()">-</button>
+            </div>
+            <div class="div12">
+                <img src="./img/logo-pacma.png" alt="Imagen" class="logopacma">
+                <h2> <p><span id="contadorPACMA">0</span></h2>
+                <button onclick="incrementarPACMA()">+</button>
+                <button onclick="decrementarPACMA()">-</button>
+            </div>
+        </div>
+    
+        <div class="container4">
+            <div class="div13">
+                <img src="./img/logo-esquerravlc.png" alt="Imagen" class="logoesquerra">
+                <h2><p><span id="contadorERPV">0</span></h2>
+                <button onclick="incrementarERPV()">+</button>
+                <button onclick="decrementarERPV()">-</button>
+            </div>
+            <div class="div14">
+                <img src="./img/logo-losverdes.png" alt="Imagen" class="logolosverdes">
+                <h2> <p><span id="contadorLOSVERDES">0</span></h2>
+                <button onclick="incrementarLOSVERDES()">+</button>
+                <button onclick="decrementarLOSVERDES()">-</button>
+            </div>
+            <div class="div15">
+                <img src="./img/logo-recortescero.png" alt="Imagen" class="logorecortescero">
+                <h2> <p><span id="contadorRecortesCero">0</span> </h2>
+                <button onclick="incrementarRecortesCero()">+</button>
+                <button onclick="decrementarRecortesCero()">-</button>
+            </div>
+            <div class="div16">
+                <img src="./img/logo-escañosenblanco.png" alt="Imagen" class="logoescaños">
+                <h2><p><span id="contadorEscañosBlanco">0</span> </h2>
+                <button onclick="incrementarEscañosBlanco()">+</button>
+                <button onclick="decrementarEscañosBlanco()">-</button>
+            </div>
+        </div>
+    </div>
 
 </body>
 </html>
-<!--
-<td > 
-    <button onclick="incrementar()"><img class="botonsumar" src="./img/MAS.svg" alt="">
-    </button> <button onclick="decrementar()"><img class="botonrestar" src="./img/MENOS.png" alt=""></button>
-</td>
--->
