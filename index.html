@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elecciones 28Mt</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <script src="script.js"></script>
+</head>
+<body>
+    <!--Titulo de la pagina principal-->
+    <h1>Elecciones 28M</h1>
+    <!--Mesa en la que se esta realizando -->
+    <h3 class="mesa" id="titulo">Mesa ??</h3>
+    <button class="diealogo" onclick="abrirDialogo()">Editar Mesa</button>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarDialogo()">&times;</span>
+            <input type="text" id="nuevo-titulo" placeholder="Ingrese un nueva mesa">
+            <button onclick="guardarTitulo()">Guardar</button>
+        </div>
+    </div>
+        
+    <!--<button onclick="incrementar()"><img class="botonsumar" src="./img/MAS.svg" alt=""></button>
+    <button onclick="decrementar()"><img class="botonrestar" src="./img/MENOS.png" alt=""></button>
+    -->
+    <table border="1">
+        <tr>
+            <td>Partido</td>
+            <td>Logo PP</td>
+            <td>Logo PSOE</td>
+            <td>Celda 3</td>
+            <td>Celda 4</td>
+        </tr>
+        <tr>
+            <Td>Botones</Td>
+            <td> 
+                <button onclick="incrementarPP()"><img class="botonsumar" src="./img/MAS.svg" alt=""></button>
+                <button onclick="decrementarPP()"><img class="botonrestar" src="./img/MENOS.png" alt=""></button>
+            </td>
+            <td >3</td>
+            <td>Celda 4</td>
+        </tr>
+        <tr>
+            <td>Total:</td>
+            <td><p><span id="contadorPP">0</span></p></td>
+            <td>Celda 4</td>
+        </tr>
+
+    </table>
+    
+
+</body>
+</html>
+<!--
+<td > 
+    <button onclick="incrementar()"><img class="botonsumar" src="./img/MAS.svg" alt="">
+    </button> <button onclick="decrementar()"><img class="botonrestar" src="./img/MENOS.png" alt=""></button>
+</td>
+-->
