@@ -1,0 +1,1 @@
+contadorPP + contadorPSOE + contadorCS + contadorVOX + contadorCOMPROMIS + contadorRVPE
